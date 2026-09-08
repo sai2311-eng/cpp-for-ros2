@@ -10,7 +10,7 @@ This repository is the log. It is not a portfolio piece. It is beginner code, ke
 
 ## Where I am
 
-**17 of 50** exercises in a C++ basics challenge. Started 1 September 2026.
+**Stage 1 — 17 of 50** exercises in a C++ basics challenge. Started 1 September 2026.
 
 | Exercises | Topic | What I was actually learning |
 |---|---|---|
@@ -19,7 +19,22 @@ This repository is the log. It is not a portfolio piece. It is beginner code, ke
 | `11`–`15` | Range-based `for` | Iterating an initializer list, counters, accumulators, and `static_cast<double>` to stop integer division truncating an average |
 | `16`–`17` | Counted `for` | Classic `for (int i = 1; i <= N; i++)`, building a multiplication table and filtering multiples |
 
-Next: functions and scope, then arrays and vectors, then classes — because a ROS 2 node *is* a class that inherits from `rclcpp::Node` and calls `super`-equivalent constructors. That's the whole reason this repo exists.
+---
+
+## The roadmap
+
+Four stages, in order. Each one exists to unlock the next.
+
+| | Stage | Source | Focus |
+|---|---|---|---|
+| 1 | **Basics** | [W3Schools C++](https://www.w3schools.com/cpp/) | Syntax, conditionals, loops, I/O — enough to write something that runs |
+| 2 | **Advanced** | [learncpp.com](https://www.learncpp.com/) | Functions and scope, arrays and vectors, pointers and references, classes, inheritance, memory |
+| 3 | **Practice** | ChatGPT-generated tasks | Problems I haven't seen before, to prove the concepts actually stuck rather than the tutorial did |
+| 4 | **ROS 2 in C++** | `rclcpp` | Nodes, publishers and subscribers, services, parameters, launch — the same concepts I already know in `rclpy`, rewritten |
+
+**Stage 2 is the one that matters.** A ROS 2 node *is* a class that inherits from `rclcpp::Node` and calls a base-class constructor. Until classes and inheritance are solid, `rclcpp` is unwritable — which is exactly why stage 4 sits behind stage 2 and not beside it.
+
+Stage 3 runs alongside 1 and 2 rather than after them. Reading C++ and writing C++ are different skills, and only one of them is the point.
 
 ---
 
