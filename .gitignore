@@ -1,0 +1,14 @@
+# Compiled binaries — g++ output with no extension, e.g. `g++ 5.cpp -o 5`
+*.out
+*.o
+a.out
+src/[0-9]
+src/[0-9][0-9]
+extras/toolchain_check
+extras/multidim_arrays
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
