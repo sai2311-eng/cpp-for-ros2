@@ -1,3 +1,10 @@
+// 32 - Sum of odd digits (repeat)
+//
+// Same program as 31, written again for practice. Only the prompt text
+// differs.
+//
+// Concepts: digit loop + condition + accumulator
+
 #include <iostream>
 
 int main() {
@@ -7,7 +14,7 @@ int main() {
     int sum = 0;
     while (number > 0) {
         int digit = number % 10;
-        if (digit % 2 != 0) {
+        if (digit % 2 != 0) {  // odd digit
             sum += digit;
         }
         number /= 10;

@@ -1,3 +1,10 @@
+// 10 - Count occurrences in a vector
+//
+// Reads a list of numbers and a search value, and counts how often the value
+// appears.
+//
+// Concepts: linear search, validating input before using it
+
 #include <iostream>
 #include <vector>
 
@@ -5,7 +12,7 @@ int main() {
     int SIZE;
     std::cout << "Enter the size of the array: ";
     std::cin >> SIZE;
-    if (SIZE <= 0) {
+    if (SIZE <= 0) {  // checked BEFORE the vector is created (the fix for 07-09)
         std::cout << "Invalid size. Please enter a positive integer." << std::endl;
         return 1; // Exit the program with an error code
     }

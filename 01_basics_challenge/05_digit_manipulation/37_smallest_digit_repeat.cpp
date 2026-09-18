@@ -1,3 +1,9 @@
+// 37 - Smallest digit (repeat)
+//
+// Same program as 29, written again for practice.
+//
+// Concepts: running minimum over digits
+
 #include <iostream>
 
 int main() {

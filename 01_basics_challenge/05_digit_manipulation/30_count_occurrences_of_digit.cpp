@@ -1,3 +1,10 @@
+// 30 - Count occurrences of a digit
+//
+// Reads a number and a digit D, and counts how many times D appears in the
+// number.
+//
+// Concepts: digit loop + comparing against user input
+
 # include <iostream>
 
 int main() {
@@ -10,7 +17,7 @@ int main() {
     int  count = 0;
     while (N > 0) {
         int digit = N % 10;
-        if (digit == D) {
+        if (digit == D) {  // match found
             count++;
         }
         N /= 10;

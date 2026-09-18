@@ -1,3 +1,10 @@
+// 41 - Even and odd digit totals
+//
+// Prints the sum and count of the even digits, and the sum and count of the
+// odd digits.
+//
+// Concepts: four accumulators, if / else
+
 #include <iostream>
 
 int main() {
@@ -10,7 +17,7 @@ int main() {
     int OddCount = 0;
     while (number > 0) {
         int digit = number % 10;
-        if (digit % 2 == 0) {
+        if (digit % 2 == 0) {  // even digit -> even totals, otherwise odd totals
             EvenSum += digit;
             EvenCount++;
         } else {

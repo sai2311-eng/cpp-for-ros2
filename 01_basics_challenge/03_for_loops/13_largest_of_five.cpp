@@ -1,3 +1,9 @@
+// 13 - Largest of five numbers
+//
+// Reads five integers and prints the largest.
+//
+// Concepts: tracking a running maximum
+
 #include <iostream>
 using namespace std;
 
@@ -19,7 +25,7 @@ int main() {
     int largest = number1;
 
     for (int i : {number1, number2, number3, number4, number5}) {
-        if ( i > largest ) {
+        if ( i > largest ) {  // found a bigger value, remember it
             largest = i;
         }
     }

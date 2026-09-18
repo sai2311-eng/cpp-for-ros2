@@ -1,3 +1,13 @@
+// 08 - Largest element and its index
+//
+// Reads a list of numbers and prints the largest and the index where it was
+// found.
+//
+// Concepts: tracking a value and its position together
+//
+// NOTE: Same check-order issue as 07: the vector is created before SIZE is
+//       validated.
+
 #include <iostream> 
 #include <vector>
 
@@ -16,10 +26,10 @@ int main() {
     }
     int Largest = numbers[0];
     int LargestIndex = 0;
-    for (int i = 1; i < SIZE; i++) {
+    for (int i = 1; i < SIZE; i++) {  // start at 1: element 0 is already the starting value
         if (numbers[i] > Largest) {
             Largest = numbers[i];
-            LargestIndex = i;
+            LargestIndex = i;  // remember where it was found
         }
     }
     std::cout << "Largest: " << Largest << std::endl;
