@@ -25,7 +25,7 @@ This repository is the log. It is not a portfolio piece. It is beginner code, ke
 
 Every file starts with a comment saying what it does and which concepts it practises. Files ending in `_repeat` are exercises I wrote a second time.
 
-**Mistakes are left in on purpose.** Where a program has a bug I've since understood, a `NOTE:` at the top of the file explains it instead of the code being quietly fixed. Several later exercises exist because they fix an earlier one — `15` fixes the average in `14`, and `02_arrays/10` fixes the size check in `07`–`09`.
+**Bugs are fixed, and the fix is written down.** Where a program had a bug, a `FIXED:` note at the top of the file says what was wrong and how it was fixed, so the lesson isn't lost — and `git log` still has the original code. `IMPROVED:` marks changes that make already-correct code clearer. Some exercises were first written to correct an earlier one: `15` was my redo of the average in `14`, and `02_arrays/10` was the first to check the size before creating the vector.
 
 ---
 

@@ -4,6 +4,11 @@
 // or divisible by 4 but not by 100.
 //
 // Concepts: %, && and ||, operator precedence
+//
+// IMPROVED: Added brackets around the && part of the condition. The logic
+//           was already correct, because && is evaluated before ||, but the
+//           brackets make it obvious and silence g++'s -Wparentheses
+//           warning.
 
 #include <iostream>
 using namespace std;
@@ -12,10 +17,8 @@ int main() {
     int year;
     cout << "Enter a year: ";
     cin >> year;
-    // && is evaluated before ||, so this reads as: (divisible by 400) ||
-    // (divisible by 4 && not by 100). Brackets around the && part would make
-    // that explicit and silence g++'s -Wparentheses warning.
-    if (year % 400 == 0 || year % 4 == 0 && year % 100 != 0) {
+    // (divisible by 400) OR (divisible by 4 AND not divisible by 100)
+    if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
       cout << "Leap year" << endl;
     }
     else {

@@ -4,9 +4,10 @@
 //
 // Concepts: && (logical AND) to combine two comparisons
 //
-// NOTE: If the two largest values are tied and the first number is smaller
-//       (e.g. 3 5 5), none of the > checks is true and the else prints 3.
-//       Using >= instead of > in the checks fixes it.
+// FIXED: With > instead of >=, a tie for the largest value (e.g. 3 5 5)
+//        matched none of the checks and fell through to the else, which
+//        printed 3. Using >= means one branch always matches, so the last
+//        check becomes a plain else.
 
 #include <iostream>
 using namespace std;
@@ -19,17 +20,14 @@ int main() {
     cin >> secondNumber;
     cout << "Enter third number: ";
     cin >> thirdNumber;
-    if (firstNumber > secondNumber && firstNumber > thirdNumber) {
+    if (firstNumber >= secondNumber && firstNumber >= thirdNumber) {
         cout << "Largest number : " << firstNumber << endl;
     }
-    else if (secondNumber > firstNumber && secondNumber > thirdNumber) {
+    else if (secondNumber >= firstNumber && secondNumber >= thirdNumber) {
         cout << "Largest number : " << secondNumber << endl;
     }
-    else if (thirdNumber > firstNumber && thirdNumber > secondNumber) {
+    else {  // neither the first nor the second is largest, so the third is
         cout << "Largest number : " << thirdNumber << endl;
-    }
-    else {  // only reached when the largest value is tied
-        cout << "Largest number : " << firstNumber << endl;
     }
     return 0;
 }

@@ -5,10 +5,10 @@
 //
 // Concepts: input validation, static_cast<double>
 //
-// NOTE: int numbers[SIZE] with a size read at run time is a variable-length
-//       array. That is not standard C++: g++ accepts it as an extension, but
-//       it is rejected with -pedantic-errors (as in the VS Code build task).
-//       std::vector, used in 05 and 07-10, is the standard way to do this.
+// FIXED: int numbers[SIZE] with a size read at run time is a variable-length
+//        array, which is not standard C++. g++ accepted it as an extension,
+//        but it failed with -pedantic-errors (as in the VS Code build task).
+//        It is now a std::vector, the standard way to do this.
 
 #include <iostream>
 #include <vector>
@@ -22,7 +22,7 @@ int main() {
         std::cout << "Invalid size. Please enter a positive integer." << std::endl;
         return 1; // Exit the program with an error code
     }
-    int numbers[SIZE];  // variable-length array, see NOTE
+    std::vector<int> numbers(SIZE);  // standard C++, unlike int numbers[SIZE]
     std::cout << "Enter " << SIZE << " numbers: ";
     for (int i = 0; i < SIZE; i++) {
         std::cin >> numbers[i];
