@@ -1,3 +1,10 @@
+// 25 - Palindrome number
+//
+// Reads a positive number and checks whether it reads the same backwards
+// (e.g. 12321).
+//
+// Concepts: reusing the reverse loop from 24, keeping a copy of the input
+
 #include <iostream>
 using namespace std;
 
@@ -14,7 +21,7 @@ int main() {
         Reverse = Reverse*10;
         Reverse += digit;
     }
-    if ( Number == Reverse) {
+    if ( Number == Reverse) {  // palindrome if the reverse equals the original
         cout << "The number is a palindrome." << endl;
     } else {
         cout << "The number is not a palindrome." << endl;

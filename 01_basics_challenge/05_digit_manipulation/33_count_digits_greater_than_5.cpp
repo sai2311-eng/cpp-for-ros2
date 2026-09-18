@@ -1,3 +1,9 @@
+// 33 - Count digits greater than 5
+//
+// Counts how many digits of a number are greater than 5.
+//
+// Concepts: digit loop + counter
+
 #include <iostream>
 
 int main() {
@@ -7,7 +13,7 @@ int main() {
     int count = 0;
     while (number > 0) {
        int digit = number % 10;
-       if (digit > 5) {
+       if (digit > 5) {  // 6, 7, 8 or 9
             count++;
       }
     number /= 10; 

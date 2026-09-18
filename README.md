@@ -10,14 +10,22 @@ This repository is the log. It is not a portfolio piece. It is beginner code, ke
 
 ## Where I am
 
-**Stage 1 — 17 of 50** exercises in a C++ basics challenge. Started 1 September 2026.
+**Stage 1 — complete.** All 50 exercises of a C++ basics challenge, started 1 September 2026.
+**Stage 2 — started.** Arrays and `std::vector`, then references and pass-by-reference from learncpp.com.
 
-| Exercises | Topic | What I was actually learning |
+| Folder | Exercises | What I was actually learning |
 |---|---|---|
-| `1`–`9` | Conditionals | `if` / `else if` / `else`, comparison and logical operators, `&&` and `\|\|` precedence, string comparison |
-| `10` | `switch` | Branching on a `char`, and why every case needs its `break` |
-| `11`–`15` | Range-based `for` | Iterating an initializer list, counters, accumulators, and `static_cast<double>` to stop integer division truncating an average |
-| `16`–`17` | Counted `for` | Classic `for (int i = 1; i <= N; i++)`, building a multiplication table and filtering multiples |
+| `01_basics_challenge/01_conditionals` | `01`–`09` | `if` / `else if` / `else`, comparison and logical operators, `&&` and `\|\|` precedence, string comparison |
+| `01_basics_challenge/02_switch` | `10` | Branching on a `char`, and why every case needs its `break` |
+| `01_basics_challenge/03_for_loops` | `11`–`19` | Range-based `for` over an initializer list, counted `for`, counters, accumulators, and `static_cast<double>` to stop integer division truncating an average |
+| `01_basics_challenge/04_while_loops` | `20`–`22` | `while` loops that stop on a sentinel value (0) |
+| `01_basics_challenge/05_digit_manipulation` | `23`–`50` | The digit loop — `% 10` takes the last digit, `/ 10` drops it — used to sum, count, reverse and search digits; `bool` flags and `break` |
+| `02_arrays` | `00`–`11` | Fixed-size arrays, `std::vector` sized at run time, input validation, tracking a value and its index, a 3-D array |
+| `03_compound_types` | `01`–`05`, plus `reference_practice/01`–`06` | Functions, pass by value vs. pass by reference (`int&`), modifying the caller's variables, swapping through references |
+
+Every file starts with a comment saying what it does and which concepts it practises. Files ending in `_repeat` are exercises I wrote a second time.
+
+**Mistakes are left in on purpose.** Where a program has a bug I've since understood, a `NOTE:` at the top of the file explains it instead of the code being quietly fixed. Several later exercises exist because they fix an earlier one — `15` fixes the average in `14`, and `02_arrays/10` fixes the size check in `07`–`09`.
 
 ---
 
@@ -41,9 +49,19 @@ Stage 3 runs alongside 1 and 2 rather than after them. Reading C++ and writing C
 ## Layout
 
 ```
-src/       the 50-challenge exercises, numbered as I wrote them
-extras/    side experiments outside the challenge
+01_basics_challenge/      the 50-exercise basics challenge
+    01_conditionals/
+    02_switch/
+    03_for_loops/
+    04_while_loops/
+    05_digit_manipulation/
+02_arrays/                arrays and std::vector
+03_compound_types/        functions, pass by value and by reference
+    reference_practice/
+extras/                   side experiments outside the challenge
 ```
+
+Each file keeps the number I originally gave it as a prefix, so reading a folder top to bottom is reading it in the order I wrote it.
 
 `extras/firstcode.cpp` is the first line of C++ I ever wrote. It does not compile — no `#include`, no `main()`. It is kept exactly as it was.
 
@@ -54,7 +72,7 @@ extras/    side experiments outside the challenge
 Any single file, with g++ 13.3.0 on Ubuntu 24.04:
 
 ```bash
-g++ -std=c++17 -Wall -Wextra src/14.cpp -o build_out && ./build_out
+g++ -std=c++23 -Wall -Wextra 01_basics_challenge/05_digit_manipulation/24_reverse_number.cpp -o reverse && ./reverse
 ```
 
 `-Wall -Wextra` is not decoration here — it is how I catch the uninitialised reads and narrowing conversions that this stage of learning produces.

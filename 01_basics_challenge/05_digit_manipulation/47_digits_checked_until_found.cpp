@@ -1,3 +1,10 @@
+// 47 - Digits checked until found
+//
+// Searches for a digit starting from the right, and prints how many digits
+// were checked before it was found.
+//
+// Concepts: counter + break
+
 #include <iostream>
 
 int main() {
@@ -11,11 +18,11 @@ int main() {
     bool found = false;
     while (number > 0) {
         int digit = number % 10;
-         count++;
+         count++;  // counts every digit examined, including the match
 
         if (digit == digitToSearch) {
             found = true;
-            break;
+            break;  // stop at the first match
         }
         number /= 10;
     }

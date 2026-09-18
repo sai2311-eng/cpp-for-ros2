@@ -1,3 +1,12 @@
+// 43 - Smallest and second-smallest digit
+//
+// Prints the smallest and the second-smallest digit of a number.
+//
+// Concepts: tracking the bottom two values at once
+//
+// NOTE: For a one-digit number, the second smallest prints 9, the starting
+//       value.
+
 #include <iostream>
 
 int main() {
@@ -8,7 +17,7 @@ int main() {
     int SecondSmallest = 9;
     while (number > 0) {
         int digit = number % 10;
-        if (digit < Smallest) {
+        if (digit < Smallest) {  // new smallest: the old smallest becomes second
             SecondSmallest = Smallest;
             Smallest = digit;
         }else if (digit < SecondSmallest) {

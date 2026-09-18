@@ -1,3 +1,10 @@
+// 46 - Contains a digit
+//
+// Reads a number and a digit, and prints whether the number contains that
+// digit.
+//
+// Concepts: bool flag, break to leave a loop early
+
 #include <iostream>
 
 int main() {
@@ -12,7 +19,7 @@ int main() {
         int digit = number % 10;
         if (digit == digitToSearch) {
             found = true;
-            break;
+            break;  // found it, no need to check the remaining digits
         }
         number /= 10;
     }

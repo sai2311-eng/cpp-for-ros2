@@ -1,3 +1,15 @@
+// 06 - Sum and average of an array
+//
+// Asks for a size, reads that many numbers, and prints their sum and
+// average.
+//
+// Concepts: input validation, static_cast<double>
+//
+// NOTE: int numbers[SIZE] with a size read at run time is a variable-length
+//       array. That is not standard C++: g++ accepts it as an extension, but
+//       it is rejected with -pedantic-errors (as in the VS Code build task).
+//       std::vector, used in 05 and 07-10, is the standard way to do this.
+
 #include <iostream>
 #include <vector>
 
@@ -10,7 +22,7 @@ int main() {
         std::cout << "Invalid size. Please enter a positive integer." << std::endl;
         return 1; // Exit the program with an error code
     }
-    int numbers[SIZE];
+    int numbers[SIZE];  // variable-length array, see NOTE
     std::cout << "Enter " << SIZE << " numbers: ";
     for (int i = 0; i < SIZE; i++) {
         std::cin >> numbers[i];
@@ -19,7 +31,7 @@ int main() {
     for ( int num : numbers) {
         sum += num;
     }
-    double average = static_cast<double>(sum) / SIZE;
+    double average = static_cast<double>(sum) / SIZE;  // average with decimals
     std::cout << "Sum: " << sum << std::endl;
     std::cout << "Average: " << average << std::endl;
     return 0;

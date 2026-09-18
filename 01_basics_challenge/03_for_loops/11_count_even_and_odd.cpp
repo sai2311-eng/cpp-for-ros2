@@ -1,3 +1,9 @@
+// 11 - Count even and odd numbers
+//
+// Reads five integers and counts how many are even and how many are odd.
+//
+// Concepts: range-based for over an initializer list {a, b, c}, counters
+
 #include <iostream>
 using namespace std;
 
@@ -15,9 +21,9 @@ int main() {
      cin >> number4;
      cout << "Enter number 5: ";
      cin >> number5;
-    for (int i : {number1, number2, number3, number4, number5}) {
+    for (int i : {number1, number2, number3, number4, number5}) {  // i takes each of the five values in turn
          if (i % 2 == 0) {
-                evenCount++;
+                evenCount++;  // increase the counter by 1
             }
         else {
             oddCount++;

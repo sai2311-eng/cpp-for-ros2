@@ -1,3 +1,9 @@
+// 39 - Sum of digits greater than 5
+//
+// Adds up the digits of a number that are greater than 5.
+//
+// Concepts: digit loop + condition + accumulator
+
 #include <iostream>
 
 int main() {
@@ -7,7 +13,7 @@ int main() {
     int sum = 0;
     while (number > 0) {
         int digit = number % 10;
-        if (digit > 5) {
+        if (digit > 5) {  // only 6, 7, 8 and 9 are added
             sum += digit;
         }
         number /= 10;

@@ -1,3 +1,10 @@
+// 19 - Sum of multiples of 3 and 5
+//
+// Reads N and sums the numbers from 1 to N that are divisible by both 3 and
+// 5 (i.e. by 15).
+//
+// Concepts: && inside a loop
+
 #include <iostream>
 using namespace std;
 
@@ -7,7 +14,7 @@ int main() {
     cin >> N;
     int sum = 0;
     for (int i =1 ; i <= N ; i++) {
-        if ( i % 3 == 0 && i % 5 == 0) {
+        if ( i % 3 == 0 && i % 5 == 0) {  // divisible by both = divisible by 15
             sum += i;
         }
         }

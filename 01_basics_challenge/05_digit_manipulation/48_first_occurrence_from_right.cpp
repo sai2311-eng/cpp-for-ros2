@@ -1,3 +1,11 @@
+// 48 - First occurrence from the right
+//
+// Prints the position of the first occurrence of a digit, counting from the
+// right (1 = last digit). Same loop as 47; only the meaning of the output
+// changes.
+//
+// Concepts: counter + break
+
 #include <iostream>
 
 int main() {
@@ -11,11 +19,11 @@ int main() {
     bool found = false;
     while (number > 0) {
         int digit = number % 10;
-         count++;
+         count++;  // position from the right
 
         if (digit == digitToSearch) {
             found = true;
-            break;
+            break;  // stop at the first match
         }
         number /= 10;
     }
