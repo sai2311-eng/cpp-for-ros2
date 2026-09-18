@@ -5,7 +5,8 @@
 //
 // Concepts: switch on a char, case labels, break, default
 //
-// NOTE: Dividing by 0 crashes the program; there is no check for it.
+// FIXED: Dividing by 0 used to crash the program. The / case now checks for
+//        a zero second number first.
 
 #include <iostream>
 using namespace std;
@@ -30,7 +31,11 @@ int main() {
             cout << "Result: " << firstNumber * secondNumber << endl;
             break;
         case '/':  // integer division: 7 / 2 gives 3
-            cout << "Result: " << firstNumber / secondNumber << endl;
+            if (secondNumber == 0) {  // dividing an int by 0 crashes the program
+                cout << "Result: " << "Cannot divide by zero" << endl;
+            } else {
+                cout << "Result: " << firstNumber / secondNumber << endl;
+            }
             break;
         default:  // any other character
             cout << "Result: " << "Invalid operator" << endl;

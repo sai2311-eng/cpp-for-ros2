@@ -4,13 +4,13 @@
 //
 // Concepts: pass by reference to avoid copying
 //
-// NOTE: The string is only read, so const std::string& is the better
-//       parameter type.
+// IMPROVED: The parameter is now const std::string&, because the string is
+//           only read.
 
 #include <iostream>
 #include <string>
 
-void printMessage (std::string &message) {  // no copy of the string is made
+void printMessage (const std::string &message) {  // const: read-only, and no copy is made
     std::cout << message << std::endl;
 }
 

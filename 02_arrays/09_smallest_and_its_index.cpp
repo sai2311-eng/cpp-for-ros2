@@ -5,8 +5,10 @@
 //
 // Concepts: tracking a value and its position together
 //
-// NOTE: Same check-order issue as 07: the vector is created before SIZE is
-//       validated.
+// FIXED: The vector was created before SIZE was checked. A negative size
+//        turns into a huge unsigned number, so the vector threw an exception
+//        and the program crashed before the check could run. The vector is
+//        now created after the check, as in exercise 10.
 
 #include <iostream>
 #include <vector>
@@ -15,11 +17,11 @@ int main() {
     int SIZE;
     std::cout << "Enter the size of the Array: ";
     std::cin >> SIZE;
-    std::vector<int> numbers(SIZE);
-    if (SIZE <= 0) {
+    if (SIZE <= 0) {  // check before creating the vector
         std::cout << "Invalid size. Please enter a positive integer." << std::endl;
         return 1; // Exit the program with an error code
     }
+    std::vector<int> numbers(SIZE);
     std::cout << "Enter " << SIZE << " numbers: ";
     for (int i = 0; i < SIZE; i++) {
         std::cin >> numbers[i];

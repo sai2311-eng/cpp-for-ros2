@@ -4,7 +4,8 @@
 //
 // Concepts: bool flag
 //
-// NOTE: Entering 0 itself prints No, because the loop never runs.
+// FIXED: Entering 0 printed No, because the digit loop never runs for 0. The
+//        flag now starts as true when the number itself is 0.
 
 #include <iostream>
 
@@ -12,7 +13,7 @@ int main() {
     std::cout << "Enter a positive number N: ";
     int N;
     std::cin >> N;
-    bool hasZero = false;  // assume no zero until one is found
+    bool hasZero = (N == 0);  // 0 itself contains a zero, and the loop never runs for it
     while (N > 0) {
         int digit = N % 10;
         if ( digit == 0) {
