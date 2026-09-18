@@ -1,13 +1,19 @@
-# Compiled binaries live here — g++ -o build/name
+# Compiled programs have no file extension (g++ file.cpp -o file), so
+# ignore every file and re-include only source code and docs
+*
+!*/
+!*.cpp
+!*.hpp
+!*.h
+!*.md
+!.gitignore
+
+# Build output
 build/
 
-# Editor and OS
+# Editor
 .vscode/
 .idea/
-*.swp
-*.o
-*.out
-.DS_Store
 
 # Not my code, kept locally but not published
 # PrintStandard.cpp is from learncpp.com; basics/ holds a generated exercise
